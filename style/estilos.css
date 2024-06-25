@@ -1,73 +1,88 @@
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Merriweather', serif; /* Fuente Merriweather */
     background-color: #FFFFFF;
-    color: #1A1A1A;
+    color: #1A1A1A; /* Color de texto principal */
 }
 
 .container {
     display: flex;
-    border-radius: 10px; /* Borde redondeado */
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 100%; /* Ancho del contenedor al 100% */
-    height: 100vh; /* Altura del contenedor al 100% de la ventana */
+    width: 100%;
+    height: 100vh;
 }
 
 .animated-image {
-    width: 50%; /* Ancho del lado izquierdo (imagen de sillas vacías en el teatro) */
-    background: url('https://unsplash.com/photos/ewGMqs2tmJI/download?force=true') center/cover no-repeat; /* Ajusta la imagen de fondo */
+    width: 50%;
+    background: url('https://www.duoc.cl/wp-content/uploads/2022/01/cie-1.jpg') center/cover no-repeat;
 }
 
 .login-form {
-    width: 50%; /* Ancho del lado derecho (formulario de inicio de sesión) */
-    background: #FFFFFF;
+    width: 50%;
+    background: #E8E8E8; /* Color de fondo #E8E8E8 */
     padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top-right-radius: 10px; /* Ajuste de bordes */
+    border-bottom-right-radius: 10px; /* Ajuste de bordes */
 }
 
-.login-form h1 {
-    margin-top: 0;
+.heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color: #1A1A1A; /* Color de texto #1A1A1A */
 }
 
-.login-form input {
+.form .input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1A1A1A;
-    border-radius: 5px;
-}
-
-.login-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #FFB800;
+    background: #FFFFFF;
     border: none;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: 0px 5px 5px rgba(26, 26, 26, 0.1); /* Sombra ajustada, color #1A1A1A */
+    border: 2px solid transparent;
+    color: #1A1A1A; /* Color de texto #1A1A1A */
+}
+
+.form .input::placeholder {
+    color: rgb(170, 170, 170);
+}
+
+.form .input:focus {
+    outline: none;
+    border: 2px solid #12b1d1; /* Ajustado para que coincida con #FFB800 */
+}
+
+.form .forgot-password a {
+    color: #0099ff; /* Ajustado para que coincida con #1A1A1A */
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.login-button {
+    background-color: #FFB800; /* Color #FFB800 */
     color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 20px 10px -15px rgba(133, 189, 215, 0.878); /* Sombra ajustada */
     cursor: pointer;
-    margin: 10px 0;
+    transition: background-color 0.3s ease;
 }
 
-.google-login {
-    background-color: #1A1A1A;
+.login-button:hover {
+    background-color: #ffcc33; /* Tono más claro al hacer hover */
 }
 
-button:hover {
-    opacity: 0.8;
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Cambia a disposición de columna en pantallas pequeñas */
-        height: auto; /* Ajusta la altura automáticamente en pantallas pequeñas */
-    }
-    .animated-image,
-    .login-form {
-        width: 100%; /* Ocupa el 100% del ancho en dispositivos pequeños */
-    }
-}
