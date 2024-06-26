@@ -73,7 +73,7 @@ body {
     padding: 20px;
     border: none;
     border-radius: 30px;
-    box-shadow: 0 5px 10px rgba(255, 184, 0);
+    box-shadow: 0 5px 10px rgb(211, 173, 77);
     outline: none;
     font-family: 'Merriweather', serif;
     font-size: 18px;
@@ -167,24 +167,6 @@ body {
     opacity: 1;
   }
 
-  .loader {
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top: 5px solid #ffffff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    display: none; /* Ocultar el loader inicialmente */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
   
 
 
@@ -223,3 +205,148 @@ body {
     }
   }
   
+
+
+/* Estilos generales DASHBOARD */
+
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar {
+    background-color: #444;
+    color: #fff;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.calendar-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.calendar-item p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.seats {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.seats h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seat-map {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.seat {
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reserve-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #FFB800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+    background-color: #FFA500;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-top: auto;
+}
+
+/* Media query para diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .calendar {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .seats {
+        padding: 10px;
+    }
+}
