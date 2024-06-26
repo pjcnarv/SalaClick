@@ -50,28 +50,32 @@ body {
 .logo {
   width: 100%; /* Ajusta el ancho del logo al 100% del contenedor */
   height: auto; /* Altura automática para mantener la proporción */
-  max-width: 300px; /* Ancho máximo del logo */
+  max-width: 400px; /* Ancho máximo del logo */
 }
 
 .form-group {
-    margin-bottom: 35px; /* Reducir el margen inferior para acercar más los elementos */
-    width: 100%; /* Ajustar el ancho al 100% del contenedor */
-    max-width: 500px; /* Ancho máximo del formulario */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar horizontalmente los elementos */
+  margin-bottom: 35px;
+  width: 108%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente los elementos */
+}
+
+  .form-group input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(255, 184, 0);
+    outline: none;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
   }
 
-.form-group input {
-  width: 100%;
-  padding: 20px; /* Aumenta el padding para más espacio */
-  border: none;
-  border-radius: 30px; /* Efecto ovalado más pronunciado */
-  box-shadow: 0 5px 20px rgba(255, 184, 0); /* Sombra más pronunciada */
-  outline: none;
-  font-family: 'Merriweather', serif;
-  font-size: 18px; /* Aumenta el tamaño del texto */
-}
+ 
+  
+
 
 .form-group .animated-button {
   font-family: 'Merriweather', serif;
