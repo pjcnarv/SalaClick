@@ -6,6 +6,10 @@
   <title>SalaClick - Inicio de Sesión</title>
   <link rel="icon" href="/imagenes/puerta-abierta.ico" type="image/x-icon">
   <link rel="stylesheet" href="style/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-HNFdIeZ4D5spLs8WLezF4eMvERLwF4B7enUZPdFJyO1W75lyTyfRqy4lYB1FHz6BSt56ViDkReQGis28R2tP2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <div class="login-container">
@@ -14,33 +18,47 @@
       <div class="logo-container">
         <img src="/imagenes/SALA (Sitio web) (1).svg" alt="Icono" class="logo">
       </div>
-      <form action="/dashboard.html" method="POST">
+      <form action="/dashboard.html" method="POST" id="loginForm">
         <div class="form-group">
-       
-          <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+          <input type="text" id="username" name="username" placeholder="Usuario" required>
         </div>
         <div class="form-group">
-      
-          <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+          <input type="password" id="password" name="password" placeholder="Contraseña" required>
         </div>
         <div class="form-group">
-          <button type="submit" class="animated-button">
+          <button type="submit" class="animated-button" id="loginButton">
             <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-              ></path>
+              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
             </svg>
             <span class="text">Iniciar Sesión</span>
             <span class="circle"></span>
             <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-              ></path>
+              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
             </svg>
           </button>
+          <div class="loader" id="loader"></div>
         </div>
       </form>
     </div>
   </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginButton = document.getElementById('loginButton');
+    const loader = document.getElementById('loader');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita que se envíe el formulario automáticamente
+
+      // Simulación de carga o autenticación
+      loader.style.display = 'block'; // Muestra el loader
+
+      // Aquí puedes agregar código para procesar el inicio de sesión (simulado)
+      setTimeout(() => {
+        // Simulación de redirección a la página de dashboard
+        window.location.href = '/dashboard.html';
+      }, 3000); // Simulación de 3 segundos de carga, ajusta según sea necesario
+    });
+  </script>
 </body>
 </html>
