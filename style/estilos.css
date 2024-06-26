@@ -1,88 +1,196 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Merriweather', serif; /* Fuente Merriweather */
-    background-color: #FFFFFF;
-    color: #1A1A1A; /* Color de texto principal */
+
+body {
+  font-family: 'Merriweather', serif;
+  background-color: #eeeeee;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
 }
 
-.container {
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 100%;
-    height: 100vh;
+.login-container {
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(255, 184, 0); /* Sombra con opacidad */
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  width: 80%; /* Ajusta el ancho del contenedor */
+  max-width: 1200px; /* Ancho máximo */
+  height: 80vh; /* Ajusta la altura del contenedor */
+  border-radius: 20px; /* Efecto ovalado */
+  overflow: hidden;
 }
 
-.animated-image {
-    width: 50%;
-    background: url('https://www.duoc.cl/wp-content/uploads/2022/01/cie-1.jpg') center/cover no-repeat;
+.left-side {
+  flex: 1;
+  background-image: url('/imagenes/imagen_frontal.jpg'); /* Ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Ocupa toda la altura del contenedor */
 }
 
-.login-form {
-    width: 50%;
-    background: #E8E8E8; /* Color de fondo #E8E8E8 */
-    padding: 2em;
-    display: flex;
+.right-side {
+  flex: 1;
+  padding: 40px; /* Aumenta el padding para más espacio */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  max-width: 100%; /* Ancho máximo del lado derecho */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente al centro */
+  justify-content: center; /* Alinea horizontalmente al centro */
+  height: 100px; /* Ejemplo: ajusta la altura según sea necesario */
+}
+
+.logo {
+  width: 100%; /* Ajusta el ancho del logo al 100% del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  max-width: 300px; /* Ancho máximo del logo */
+}
+
+.form-group {
+  margin-bottom: 30px; /* Aumenta el margen inferior */
+  width: 100%; /* Ajusta el ancho al 100% */
+  max-width: 300px; /* Ancho máximo del formulario */
+}
+
+.form-group label {
+
+  display: block;
+  margin-bottom: 10px; /* Aumenta el margen inferior */
+  color: #1A1A1A;
+  font-size: 18px; /* Aumenta el tamaño del texto */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 20px; /* Aumenta el padding para más espacio */
+  border: none;
+  border-radius: 30px; /* Efecto ovalado más pronunciado */
+  box-shadow: 0 5px 10px rgba(255, 184, 0); /* Sombra más pronunciada */
+  outline: none;
+  font-family: 'Merriweather', serif;
+  font-size: 18px; /* Aumenta el tamaño del texto */
+}
+
+.form-group .animated-button {
+  font-family: 'Merriweather', serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid transparent;
+  font-size: 18px; /* Ajusta el tamaño del texto */
+  background-color: transparent;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #1A1A1A;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form-group .animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #1A1A1A;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form-group .animated-button .arr-1 {
+  right: 16px;
+}
+
+.form-group .animated-button .arr-2 {
+  left: -25%;
+}
+
+.form-group .animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form-group .animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form-group .animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.form-group .animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.form-group .animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.form-group .animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.form-group .animated-button:hover svg {
+  fill: #1A1A1A;
+}
+
+.form-group .animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #FFB800;
+}
+
+.form-group .animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* Media query para diseño responsive */
+@media (max-width: 768px) {
+  .login-container {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: 10px; /* Ajuste de bordes */
-    border-bottom-right-radius: 10px; /* Ajuste de bordes */
-}
+    height: auto; /* Ajusta la altura automáticamente */
+  }
 
-.heading {
-    text-align: center;
-    font-weight: 900;
-    font-size: 30px;
-    color: #1A1A1A; /* Color de texto #1A1A1A */
-}
+  .left-side {
+    flex: none; /* Evita que la imagen de fondo se estire en pantallas pequeñas */
+    height: 300px; /* Altura fija para la imagen de fondo en pantallas pequeñas */
+    width: 100%; /* Ajusta el ancho al 100% */
+  }
 
-.form .input {
-    width: 100%;
-    background: #FFFFFF;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    margin-top: 15px;
-    box-shadow: 0px 5px 5px rgba(26, 26, 26, 0.1); /* Sombra ajustada, color #1A1A1A */
-    border: 2px solid transparent;
-    color: #1A1A1A; /* Color de texto #1A1A1A */
-}
+  .right-side {
+    padding: 20px; /* Ajusta el padding en pantallas pequeñas */
+    max-width: 100%; /* Ancho máximo del lado derecho en pantallas pequeñas */
+  }
 
-.form .input::placeholder {
-    color: rgb(170, 170, 170);
-}
+  .form-group .animated-button {
+    font-size: 16px; /* Reducir el tamaño del botón en pantallas pequeñas */
+  }
 
-.form .input:focus {
-    outline: none;
-    border: 2px solid #12b1d1; /* Ajustado para que coincida con #FFB800 */
+  .logo-container {
+    margin-bottom: 10px; /* Ajusta el margen inferior del logo en pantallas pequeñas */
+    margin-top: -20px; /* Ajusta el margen superior del logo en pantallas pequeñas */
+  }
 }
-
-.form .forgot-password a {
-    color: #0099ff; /* Ajustado para que coincida con #1A1A1A */
-}
-
-.button-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.login-button {
-    background-color: #FFB800; /* Color #FFB800 */
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 20px 10px -15px rgba(133, 189, 215, 0.878); /* Sombra ajustada */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: #ffcc33; /* Tono más claro al hacer hover */
-}
-
