@@ -6,38 +6,45 @@
     <title>Dashboard - Reservación de Salas de Clases</title>
     <link rel="icon" href="/imagenes/puerta-abierta.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
-    <link rel="stylesheet" href="/style/estilos.css">
+    <link rel="stylesheet" href="/style/estilos_dboard.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="header">
+        <div class="nav-container">
+            <div class="input">
+                <button class="value">Perfil Público</button>
+                <button class="value">Cuenta</button>
+                <button class="value">Apariencia</button>
+                <button class="value">Accesibilidad</button>
+                <button class="value">Notificaciones</button>
+            </div>
+        </div>
         <h1>Dashboard - Reservación de Salas de Clases</h1>
     </header>
     <div class="container">
         <aside class="sidebar">
-            <h2>Salas Disponibles</h2>
+            <h2>Menú</h2>
             <ul>
-                <li><a href="#">Sala A (20 asientos)</a></li>
-                <li><a href="#">Sala B (30 asientos)</a></li>
-                <li><a href="#">Sala C (25 asientos)</a></li>
-                <li><a href="#">Sala D (15 asientos)</a></li>
+                <li><a href="#">Salas Disponibles</a></li>
+                <li><a href="#">Salas Ocupadas</a></li>
+                <li><a href="#">Salas por Ocupar</a></li>
             </ul>
         </aside>
-        <main>
-            <section class="calendar">
-                <!-- Aquí se generaría el calendario dinámicamente -->
-                <div class="calendar-item">
-                    <h3>Julio 2024</h3>
-                    <p>Selecciona una fecha para reservar</p>
-                    <!-- Calendario o cuadrícula de fechas -->
+        <main class="main-content">
+            <section class="cards">
+                <div class="card">
+                    <h3>Salas Disponibles</h3>
+                    <p>Ver todas las salas disponibles</p>
                 </div>
-            </section>
-            <section class="seats">
-                <h2>Selecciona tu asiento</h2>
-                <div class="seat-map">
-                    <!-- Aquí se mostraría el mapa de asientos interactivo -->
+                <div class="card">
+                    <h3>Salas Ocupadas</h3>
+                    <p>Ver todas las salas ocupadas</p>
                 </div>
-                <button class="reserve-button">Reservar</button>
+                <div class="card">
+                    <h3>Salas por Ocupar</h3>
+                    <p>Ver todas las salas por ocupar</p>
+                </div>
             </section>
         </main>
     </div>
